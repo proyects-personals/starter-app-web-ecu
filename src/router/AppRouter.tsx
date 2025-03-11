@@ -5,7 +5,7 @@ import HomeScreen from '../pages/modules/home/HomeScreen';
 const AppRouter: React.FC = () => {
   return (
     <Router>
-      <div className="App">
+      <div>
         <main>
           <Routes>
             <Route path="/" element={<HomeScreen />} />

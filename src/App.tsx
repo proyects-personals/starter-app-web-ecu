@@ -5,8 +5,8 @@ import AppRouter from './router/AppRouter';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <div>
+      {/* <Header /> */}
       <main>
         <AppRouter />
       </main>
