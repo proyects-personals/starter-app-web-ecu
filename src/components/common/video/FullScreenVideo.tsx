@@ -1,33 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 
+const DEFAULT_SCALE_LARGE_SCREEN = 2.2;
+const DEFAULT_SCALE_SMALL_SCREEN = 4.4;
+const MOBILE_BREAKPOINT = 768;
+
 const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
+  const [scale, setScale] = useState(DEFAULT_SCALE_LARGE_SCREEN);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (window.innerWidth < MOBILE_BREAKPOINT) {
+        setScale(DEFAULT_SCALE_SMALL_SCREEN);
+      } else {
+        setScale(DEFAULT_SCALE_LARGE_SCREEN);
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
   return (
-    <div className="absolute inset-0">
+    <div className="relative inset-0 w-full h-full bg-black overflow-hidden">
       <ReactPlayer
         url={url}
         playing
         loop
         muted
-        width="100%"
-        height="160%"
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          objectFit: 'cover',
-        }}
-        config={{
-          youtube: {
-            playerVars: {
-              modestbranding: 1,
-              controls: 0,
-              showinfo: 0,
-              rel: 0,
-              iv_load_policy: 3,
-            },
-          },
-        }}
+        width="100vw"
+        height="100vh"
+        className="absolute top-0 left-0"
+        style={{ transform: `scale(${scale})` }}
       />
     </div>
   );

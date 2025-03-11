@@ -66,7 +66,7 @@ const OverlayContent: React.FC = () => {
 
   return (
     <div className="relative w-full p-8 flex flex-col items-center justify-center text-white space-y-14 mt-52 z-0">
-      <div className="text-4xl font-bold">Bienvenido a Ecuador</div>
+      <div className="text-4xl font-bold text-center">Bienvenido a Ecuador</div>
       <div className="flex space-x-4">
         <button className="px-6 py-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition-colors">
           Registro de comprador
