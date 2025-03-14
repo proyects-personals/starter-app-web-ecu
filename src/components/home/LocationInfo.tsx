@@ -1,8 +1,7 @@
 import React from 'react';
 
 const LocationInfo: React.FC = () => {
-  const googleMapsLink =
-    'https://www.google.com/maps?q=Avenida+Amazonas,+Quito'; // Sustituye esto con la URL de tu ubicación
+  const googleMapsLink = 'https://maps.app.goo.gl/j7qdQGjyczNYM4d56';
 
   return (
     <div className="mt-12">
@@ -34,13 +33,14 @@ const LocationInfo: React.FC = () => {
         {/* Fila 2: Mapa con dirección */}
         <div className="flex justify-center items-center bg-white p-4 rounded-md shadow-lg">
           <iframe
-            title="Mapa de ubicación"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1952.2311921260877!2d-79.89943576053024!3d-2.1955162795527593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d591d06d2fc0b1%3A0xcfc4ad8dbb194f8c!2sAvenida%20Amazonas%2C%20Quito!5e0!3m2!1ses-419!2sec!4v1679922729020!5m2!1ses-419!2sec"
-            width="100%"
-            height="400"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.805203979529!2d-78.4896722!3d-0.14691559999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5854cc3770f7b%3A0xded72d14b4f1d7a7!2sCentro%20de%20Convenciones%20Metropolitano%20de%20Quito%20CCMQ!5e0!3m2!1ses-419!2sec!4v1741983302029!5m2!1ses-419!2sec"
+            width="600"
+            height="450"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Maps Location"
           ></iframe>
         </div>
       </div>

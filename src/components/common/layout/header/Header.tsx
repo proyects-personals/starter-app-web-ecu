@@ -50,7 +50,7 @@ const Header = () => {
         </div>
       </div>
       <div className="w-full bg-gray-800 p-4 text-white flex justify-center">
-        <nav className="flex space-x-6">
+        <nav className="flex space-x-6 mx-2">
           {/* Enlace 1: Home */}
           <Link
             to="/"
