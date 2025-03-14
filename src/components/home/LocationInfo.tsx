@@ -19,9 +19,9 @@ const LocationInfo: React.FC = () => {
             Ver en Google Maps
           </button>
           <p className="text-md pt-4 text-gray-800">
-            Si vienes desde el centro de la ciudad, dirígete hacia el norte por
-            la Avenida Amazonas. Luego, gira a la derecha en la calle Juan
-            Montalvo. El destino estará a tu izquierda después de 500 metros.
+            Cercanía con el Aeropuerto y accesibilidad mediante el Metro de
+            Quito. Ubicado dentro del Parque Bicentenario,. Un espacio de alta
+            afluencia.
           </p>
           <h1 className="text-2xl font-semibold mt-4">Contacto:</h1>
           <ul className="text-gray-700 mt-2">
