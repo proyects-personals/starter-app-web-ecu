@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logoEcuFest from '../../../assets/logos/Logo-Ecuador-Fest1.png';
+import logoEcuFest from '../../../../assets/logos/Logo-Ecuador-Fest1.png';
 import {
   Home as HomeIcon,
   Event as EventIcon,
@@ -56,7 +56,7 @@ const Header = () => {
 
           {/* Enlace 2: Agenda de actividades */}
           <Link
-            to="/about"
+            to="/agenda-activities"
             className="hover:text-gray-400 flex items-center"
             title="Agenda de actividades"
           >
@@ -66,7 +66,7 @@ const Header = () => {
 
           {/* Enlace 3: Conoce Ecuador Travel */}
           <Link
-            to="/services"
+            to="/discover-Ecuador-travel"
             className="hover:text-gray-400 flex items-center"
             title="Conoce Ecuador Travel"
           >
@@ -76,7 +76,7 @@ const Header = () => {
 
           {/* Enlace 4: Catálogo */}
           <Link
-            to="/contact"
+            to="/catalog"
             className="hover:text-gray-400 flex items-center"
             title="Catálogo"
           >
@@ -86,7 +86,7 @@ const Header = () => {
 
           {/* Enlace 5: Propuesta Comercial */}
           <Link
-            to="/contact"
+            to="/commercial-proposal"
             className="hover:text-gray-400 flex items-center"
             title="Propuesta Comercial"
           >
@@ -96,7 +96,7 @@ const Header = () => {
 
           {/* Enlace 6: Paquetes */}
           <Link
-            to="/contact"
+            to="/packages"
             className="hover:text-gray-400 flex items-center"
             title="Paquetes"
           >
