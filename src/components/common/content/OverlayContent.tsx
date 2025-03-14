@@ -65,8 +65,8 @@ const OverlayContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full p-8 flex flex-col items-center justify-center text-white space-y-14 mt-52 z-0">
-      <div className="font-bold text-center space-y-6">
+    <div className="relative w-full p-2 flex flex-col items-center justify-center text-white space-y-14 mt-44 z-0">
+      <div className="font-bold text-center space-y-2">
         <h2 className="text-xl sm:text-3xl">Bienvenido a Ecuador</h2>
         <h1 className="text-2xl sm:text-4xl">1 Destino, 4 Aventuras</h1>
       </div>
@@ -84,17 +84,19 @@ const OverlayContent: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 gap-4 mt-8">
+      <div className="grid grid-cols-4 gap-4">
         {/* Días */}
-        <div className="bg-transparent p-4 text-center rounded-lg">
+        <div className="bg-transparent text-center rounded-lg">
           <div className="text-xl sm:text-6xl text-gray-300 sm:text-4xl">
             {timeLeft.days}
           </div>
-          <div className="text-sm sm:text-2xl text-gray-500">Días</div>
+          <div className="text-sm sm:text-2xl text-gray-500 sm:text-sm">
+            Días
+          </div>
         </div>
 
         {/* Hora */}
-        <div className="bg-transparent p-4 text-center rounded-lg">
+        <div className="bg-transparent text-center rounded-lg">
           <div className="text-xl sm:text-6xl text-gray-300 sm:text-4xl">
             {timeLeft.hours}
           </div>
@@ -104,7 +106,7 @@ const OverlayContent: React.FC = () => {
         </div>
 
         {/* Minutos */}
-        <div className="bg-transparent p-4 text-center rounded-lg">
+        <div className="bg-transparent text-center rounded-lg">
           <div className="text-xl sm:text-6xl text-gray-300 sm:text-4xl">
             {timeLeft.minutes}
           </div>
@@ -114,7 +116,7 @@ const OverlayContent: React.FC = () => {
         </div>
 
         {/* Segundos */}
-        <div className="bg-transparent p-4 text-center rounded-lg">
+        <div className="bg-transparent text-center rounded-lg">
           <div className="text-xl sm:text-6xl text-gray-300 sm:text-4xl">
             {timeLeft.seconds}
           </div>

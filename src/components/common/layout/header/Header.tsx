@@ -34,9 +34,16 @@ const Header = () => {
         scrolled ? 'bg-gray-800 text-white' : 'bg-transparent text-black'
       }`}
     >
-      <div className="flex justify-between items-center py-4 px-6">
-        <div className="flex items-center space-x-4">
-          <img src={logoEcuFest} alt="Logo" className="h-16" />
+      <div className="flex justify-between items-center py-1 px-18 mx-2 sm:mx-28">
+        <div className="flex items-center space-x-6 gap-12">
+          {/* Enlace al Home */}
+          <Link to="/">
+            <img
+              src={logoEcuFest}
+              alt="Logo"
+              className="h-20 w-20 cursor-pointer"
+            />
+          </Link>
         </div>
         <div className="flex space-x-4">
           <p className="text-white">ECUADOR TRAVEL</p>
