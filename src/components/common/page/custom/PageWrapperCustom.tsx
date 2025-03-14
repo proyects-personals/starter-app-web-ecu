@@ -10,7 +10,7 @@ const PageWrapperCustom: React.FC<PageWrapperProps> = ({
   className,
 }) => {
   return (
-    <div className={`min-h-screen mx-12 ${className ?? ''}`}>
+    <div className={`min-h-screen mb-12 mx-48 ${className ?? ''}`}>
       <main>{children}</main>
     </div>
   );
