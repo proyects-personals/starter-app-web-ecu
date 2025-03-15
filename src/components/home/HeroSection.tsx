@@ -4,7 +4,7 @@ import FullScreenVideo from '../common/video/FullScreenVideo';
 
 const HeroSection: React.FC<{ videoUrl: string }> = ({ videoUrl }) => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-hidden bg-light-red">
       <div className="absolute inset-0 z-0">
         <FullScreenVideo url={videoUrl} />
       </div>

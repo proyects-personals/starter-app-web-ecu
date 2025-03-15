@@ -16,7 +16,7 @@ const AnimatedNumbers = ({ target }: { target: number }) => {
   }, [target]);
 
   return (
-    <animated.div className="text-2xl sm:text-6xl font-bold">
+    <animated.div className="text-2xl sm:text-5xl font-bold">
       {props.number.to((n) => Math.floor(n))}
     </animated.div>
   );
@@ -24,31 +24,50 @@ const AnimatedNumbers = ({ target }: { target: number }) => {
 
 const IconNumber = () => {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-3 gap-12 sm:gap-16 md:gap-24 mx-6 sm:mx-12 md:mx-24 mt-8">
-      {/* Primera Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-blue-600 mb-2">
-          <i className="fas fa-home"></i>
+    <section className="grid grid-cols-1 sm:grid-cols-3 text-center space-x-2 mt-12">
+      <div className="grid-cols-1">
+        <div>
+          <i className="fas fa-home text-5xl"></i>
         </div>
-        <AnimatedNumbers target={100} />
-      </div>
-
-      {/* Segunda Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-red-500 mb-2">
-          <i className="fas fa-heart"></i>
+        <div className="grid grid-cols-1">
+          <div className="flex items-center justify-center space-x-1 text-2xl sm:text-4xl font-bold">
+            <span className="text-4xl">+</span>
+            <AnimatedNumbers target={100} />
+          </div>
+          <div>
+            <h1 className="text-xl">Estadísticas</h1>
+          </div>
         </div>
-        <AnimatedNumbers target={200} />
       </div>
-
-      {/* Tercera Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-yellow-500 mb-2">
-          <i className="fas fa-star"></i>
+      <div className="grid-cols-1">
+        <div>
+          <i className="fas fa-home text-5xl"></i>
         </div>
-        <AnimatedNumbers target={300} />
+        <div className="grid grid-cols-1">
+          <div className="flex items-center justify-center space-x-1 text-2xl sm:text-4xl font-bold">
+            <span className="text-5xl">+</span>
+            <AnimatedNumbers target={100} />
+          </div>
+          <div>
+            <h1 className="text-xl">Países</h1>
+          </div>
+        </div>
       </div>
-    </div>
+      <div className="grid-cols-1">
+        <div>
+          <i className="fas fa-home text-5xl"></i>
+        </div>
+        <div className="grid grid-cols-1">
+          <div className="flex items-center justify-center space-x-1 text-2xl sm:text-4xl font-bold">
+            <span className="text-5xl">+</span>
+            <AnimatedNumbers target={100} />
+          </div>
+          <div>
+            <h1 className="text-xl">Clientes</h1>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
