@@ -31,8 +31,8 @@ const AppRouter: React.FC = () => {
         <MainWrapperCustom>
           <main>
             <Routes>
-              <Route path="/" element={<Navigate to="/home" />} />
-              <Route path="/home" element={<HomeScreen />} />
+              <Route path="/" element={<Navigate to="/en-construccion" />} />
+              <Route path="/en-construccion" element={<HomeScreen />} />
               <Route
                 path="/agenda-activities"
                 element={<AgendaOfActivitiesScreen />}
