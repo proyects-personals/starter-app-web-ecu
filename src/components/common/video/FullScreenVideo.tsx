@@ -23,7 +23,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
   }, []);
 
   return (
-    <div className="relative inset-0 w-full h-full bg-black overflow-hidden">
+    <div className="relative inset-0 w-full h-full overflow-hidden">
       <ReactPlayer
         url={url}
         playing

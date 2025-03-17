@@ -16,7 +16,7 @@ const AnimatedNumbers = ({ target }: { target: number }) => {
   }, [target]);
 
   return (
-    <animated.div className="text-2xl sm:text-6xl font-bold">
+    <animated.div className="text-2xl sm:text-6xl font-bold text-dark">
       {props.number.to((n) => Math.floor(n))}
     </animated.div>
   );
@@ -24,29 +24,21 @@ const AnimatedNumbers = ({ target }: { target: number }) => {
 
 const IconNumber = () => {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-3 gap-12 sm:gap-16 md:gap-24 mx-6 sm:mx-12 md:mx-24 mt-8">
-      {/* Primera Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-blue-600 mb-2">
+    <div className="flex flex-wrap justify-center items-center gap-18 sm:gap-16 md:gap-24 mt-8 w-full">
+      <div className="flex flex-col items-center w-full sm:w-auto">
+        <div className="text-4xl sm:text-6xl text-blue-600 mb-2">
           <i className="fas fa-home"></i>
         </div>
         <AnimatedNumbers target={100} />
+        <p className="mt-4 text-lg text-dark text-center">Casas Vendidas</p>
       </div>
 
-      {/* Segunda Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-red-500 mb-2">
+      <div className="flex flex-col items-center w-full sm:w-auto">
+        <div className="text-4xl sm:text-6xl text-red-500 mb-2">
           <i className="fas fa-heart"></i>
         </div>
         <AnimatedNumbers target={200} />
-      </div>
-
-      {/* Tercera Columna */}
-      <div className="flex flex-col items-center">
-        <div className="text-2xl sm:text-6xl text-yellow-500 mb-2">
-          <i className="fas fa-star"></i>
-        </div>
-        <AnimatedNumbers target={300} />
+        <p className="mt-4 text-lg text-dark text-center">Me Gusta</p>
       </div>
     </div>
   );
