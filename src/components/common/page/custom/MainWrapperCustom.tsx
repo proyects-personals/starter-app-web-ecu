@@ -14,7 +14,7 @@ const MainWrapperCustom: React.FC<MainWrapperProps> = ({
 
   return (
     <div
-      className={`${isDarkTheme ? 'bg-dark-primary' : 'bg-light-primary'} ${className ?? ''} min-h-screen`}
+      className={`${isDarkTheme ? 'bg-dark-white' : 'bg-light-white'} ${className ?? ''} min-h-screen`}
     >
       <main>{children}</main>
     </div>

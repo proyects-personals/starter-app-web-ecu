@@ -1,79 +1,67 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import HeroSection from '../../../components/home/HeroSection';
-import bgVideo from '../../../assets/videos/bgVideo.mp4';
-import PageWrapperCustom from '../../../components/common/page/custom/PageWrapperCustom';
 import IconNumber from '../../../components/home/IconNumber';
 import monkeyImage from '../../../assets/animals/Mono.jpg';
+import imageOso from '../.././../assets/animals/OsoWEB.jpg';
+import imagePiquero from '../.././../assets/animals/PiqueroWEB.jpg';
+import imageTortuga from '../.././../assets/animals/TortugaWEB.jpg';
 import LocationInfo from '../../../components/home/LocationInfo';
+import logoCCM from '../.././../assets/logos/LogoCCM.png';
+import Carousel from '../../../components/common/carrusels/Carousel';
 
 const HomeScreen: React.FC = () => {
+  const images = [monkeyImage, imageOso, imagePiquero, imageTortuga];
   return (
-    <div>
-      <HeroSection videoUrl={bgVideo} />
-      <IconNumber />
-      <PageWrapperCustom>
-        <div className="relative flex flex-col items-center justify-center min-h-screen text-center mt-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-8 bg-sky-50 rounded-lg shadow-lg rounded-md">
-            <div className="text-left p-4">
-              <h1 className="text-4xl">Ecuador Travel</h1>
-              <p className="pt-4 text-md text-gray-800">
-                Ecuador travel es una plataforma innovadora que conecta la
-                oferta ecuatoriana con dos públicos clave: empresas del sector
-                (B2B) y viajeros finales (B2C) durante 4 días.
-              </p>
-            </div>
-            <div className="flex items-center justify-end">
-              <img
-                src={monkeyImage}
-                alt="monkey"
-                className="sm:w-72 sm:h-80 object-cover"
-              />
-            </div>
+    <div className="grid grid-cols-1 space-y-8 mb-8">
+      <section>
+        <HeroSection videoUrl={'as'} />
+      </section>
+      <section>
+        <IconNumber />
+      </section>
+      <section className="grid grid-cols-2 bg-light-yellow50">
+        <div className="p-20 text-white">
+          <h1 className="text-4xl">Ecuador Travel</h1>
+          <div className="border-t border-white w-60 mt-4"></div>
+          <p className="pt-4 text-md">
+            Ecuador travel es una plataforma innovadora que conecta la oferta
+            ecuatoriana con dos públicos clave: empresas del sector (B2B) y
+            viajeros finales (B2C) durante 4 días.
+          </p>
+        </div>
+        <div className="flex justify-center items-center">
+          <Carousel images={images} />
+        </div>
+      </section>
+      <section className="grid grid-cols-1">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="text-4xl">Partners</h1>
+          <div className="border-t border-light-yellow50 w-40 mt-4"></div>
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          <div className="p-2 flex justify-center items-center">
+            <img src={logoCCM} alt="Logo" className="w-32 h-auto" />
           </div>
-
-          <div className="mt-12">
-            <h1 className="text-4xl text-center">Patrocinadores</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 sm:gap-48 mt-6">
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="flex justify-center items-center"
-              >
-                <img
-                  src={monkeyImage}
-                  alt="patrocinador"
-                  className="w-24 h-24 sm:w-36 sm:h-36 object-cover"
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="flex justify-center items-center"
-              >
-                <img
-                  src={monkeyImage}
-                  alt="patrocinador"
-                  className="w-24 h-24 sm:w-36 sm:h-36 object-cover"
-                />
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
-                className="flex justify-center items-center"
-              >
-                <img
-                  src={monkeyImage}
-                  alt="patrocinador"
-                  className="w-24 h-24 sm:w-36 sm:h-36 object-cover"
-                />
-              </motion.div>
-            </div>
+          <div className="p-2 flex justify-center items-center">
+            <img src={logoCCM} alt="Logo" className="w-32 h-auto" />
           </div>
-
+          <div className="p-2 flex justify-center items-center">
+            <img src={logoCCM} alt="Logo" className="w-32 h-auto" />
+          </div>
+        </div>
+      </section>
+      <section className="grid grid-cols-1">
+        <div className="flex flex-col justify-center items-center bg-light-base50 h-40">
+          <div className="flex items-center">
+            <i className="fa-solid fa-location-dot text-4xl mr-4"></i>
+            <h1 className="text-4xl">Cómo Llegar</h1>
+          </div>
+          <div className="border-t border-light-base200 w-60 mt-4"></div>
+        </div>
+        <div>
           <LocationInfo />
         </div>
-      </PageWrapperCustom>
+      </section>
     </div>
   );
 };

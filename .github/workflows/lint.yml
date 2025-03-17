@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - ecu/main
   pull_request:
     branches:
       - main
+      - ecu/main
 
 jobs:
   lint:
