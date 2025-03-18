@@ -27,16 +27,12 @@ const AppRouter: React.FC = () => {
       }}
     >
       <ScrollToTop />
-      <div>
+      <div className="bg-white">
         <Header />
         <MainWrapperCustom>
           <main>
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
-              {/* <Route
-                path="/under-construction"
-                element={<UnderConstructionScreen />}
-              /> */}
               <Route path="/home" element={<HomeScreen />} />
               <Route
                 path="/agenda-activities"

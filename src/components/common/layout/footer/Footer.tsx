@@ -9,42 +9,29 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 text-sm">
-      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Primera Columna con Cuatro Filas Centradas */}
+    <footer className="bg-dark text-white py-8 text-sm">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-10 sm:p-0">
         <div>
-          <h3 className="text-lg font-semibold mb-3">Contacto</h3>
-          <p>📍 Av. Paseo de la República 6348, Miraflores, Lima, Perú</p>
-          <p>📧 supplier@perutravelmart.com.pe</p>
-          <p>📧 buyer@perutravelmart.com.pe</p>
-          <p>📧 ptm@perutravelmart.com.pe</p>
-          <p>📞 +51 908 874 658</p>
-          <p>📞 +51 715-6555</p>
+          <p>
+            Nos destacamos por la capacidad para organizar eventos de gran
+            magnitud de manera exitosa, gracias a nuestra experiencia y
+            servicios especializados creamos momentos únicos.
+          </p>
+          <p>ventas@ccmq.ec</p>
+          <p>Parque Bicentenario</p>
+          <p>Av. Río Amazonas, Quito 170104, Ecuador</p>
+          <p>+593 96 186 2730</p>
+          <p>08:00 - 18:00</p>
         </div>
 
-        {/* Columna 2: Info */}
-        {/* <div>
-          <h3 className="text-lg font-semibold mb-3">Perú Travel Mart</h3>
-          <ul className="space-y-1">
-            <li>➤ Presentación</li>
-            <li>➤ Programa 2025</li>
-            <li>➤ Seminarios</li>
-            <li>➤ Exhibición</li>
-            <li>➤ Tours Educativos</li>
-            <li>➤ Preguntas Frecuentes</li>
-          </ul>
-        </div> */}
-
-        {/* Columna 3: Enlaces */}
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Enlaces</h3>
+        <div className="flex sm:justify-center">
           <ul className="space-y-1">
             <li>
               <Link
                 to="/agenda-activities"
                 className="text-white hover:underline"
               >
-                ➤ Agenda de actividades
+                Agenda de actividades
               </Link>
             </li>
             <li>
@@ -52,12 +39,12 @@ const Footer = () => {
                 to="/discover-Ecuador-travel"
                 className="text-white hover:underline"
               >
-                ➤ Conoce Travel Ecuador
+                Conoce Travel Ecuador
               </Link>
             </li>
             <li>
               <Link to="/catalog" className="text-white hover:underline">
-                ➤ Catalogo
+                Catalogo
               </Link>
             </li>
             <li>
@@ -65,49 +52,49 @@ const Footer = () => {
                 to="/commercial-proposal"
                 className="text-white hover:underline"
               >
-                ➤ Propuesta comercial
+                Propuesta comercial
               </Link>
             </li>
             <li>
               <Link to="/packages" className="text-white hover:underline">
-                ➤ Paquetes
+                Paquetes
               </Link>
             </li>
             <li>
               <Link to="/contact" className="text-white hover:underline">
-                ➤ Contactanos
+                Contactanos
               </Link>
             </li>
           </ul>
         </div>
 
         {/* Columna 4: Redes Sociales */}
-        <div>
-          <h3 className="text-lg font-semibold mb-3">Síguenos</h3>
+        <div className="flex sm:justify-center">
           <ul className="space-y-2">
+            <li>Síguenos</li>
             <li className="flex items-center space-x-2">
-              <Facebook className="text-red-500" /> <span>Facebook</span>
+              <Facebook className="text-light-red" /> <span>Facebook</span>
             </li>
             <li className="flex items-center space-x-2">
-              <Instagram className="text-red-500" /> <span>Instagram</span>
+              <Instagram className="text-light-red" /> <span>Instagram</span>
             </li>
             <li className="flex items-center space-x-2">
-              <LinkedIn className="text-red-500" /> <span>LinkedIn</span>
+              <LinkedIn className="text-light-red" /> <span>LinkedIn</span>
             </li>
             <li className="flex items-center space-x-2">
-              <YouTube className="text-red-500" /> <span>Youtube</span>
+              <YouTube className="text-light-red" /> <span>Youtube</span>
             </li>
             <li className="flex items-center space-x-2">
-              <Twitter className="text-red-500" /> <span>Twitter</span>
+              <Twitter className="text-light-red" /> <span>Twitter</span>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Fila inferior con Copyright */}
-      <div className="mt-8 border-t border-gray-700 pt-4 flex justify-between px-6">
-        <p>© 2025 Ecuador Travel Mart, Todos los derechos reservados</p>
-        <p className="text-gray-400">Ecuador Travel</p>
+      <div className="mt-8 border-t-2 border-gray-700 pt-4 flex flex-col md:flex-row justify-between">
+        <div className="container mx-auto text-center md:text-left">
+          <p>© 2025 Ecuador Travel Mart, Todos los derechos reservados</p>
+        </div>
       </div>
     </footer>
   );
