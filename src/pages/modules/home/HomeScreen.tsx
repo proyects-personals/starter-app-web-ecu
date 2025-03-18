@@ -9,14 +9,17 @@ import LocationInfo from '../../../components/home/LocationInfo';
 import Carousel from '../../../components/common/carrusels/Carousel';
 import halfOfTheWorld from '../../../assets/places/MitadMundoWEB.jpg';
 import Partners1Image from '../../../assets/logos/Partners1.png';
-import videoHome from '../../../assets/animations/bgVideo.mp4';
 
 const HomeScreen: React.FC = () => {
   const images = [monkeyImage, imageOso, imagePiquero, imageTortuga];
   return (
     <div className="grid grid-cols-1 space-y-8 mb-8">
       <section>
-        <HeroSection videoUrl={videoHome} />
+        <HeroSection
+          videoUrl={
+            'https://travel-ecudor.s3.us-east-2.amazonaws.com/bgVideo.mp4'
+          }
+        />
       </section>
       <section>
         <IconNumber />
