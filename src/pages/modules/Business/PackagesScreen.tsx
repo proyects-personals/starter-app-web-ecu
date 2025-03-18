@@ -1,5 +1,4 @@
 import React from 'react';
-import PageWrapperCustom from '../../../components/common/page/custom/PageWrapperCustom';
 import ImageWithText from '../../../components/common/images/ImageWithText';
 import UnderConstructionScreen from '../construction/UnderConstructionScreen';
 
