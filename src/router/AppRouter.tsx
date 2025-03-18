@@ -17,7 +17,6 @@ import PackagesScreen from '../pages/modules/Business/PackagesScreen';
 import ContactScreen from '../pages/modules/Business/ContactScreen';
 import ScrollToTop from '../components/common/page/scroll/ScrollToTop';
 import NotFoundScreen from '../pages/errors/404/NotFoundScreen';
-import UnderConstructionScreen from '../pages/modules/construction/UnderConstructionScreen';
 
 const AppRouter: React.FC = () => {
   return (
@@ -28,17 +27,14 @@ const AppRouter: React.FC = () => {
       }}
     >
       <ScrollToTop />
-      <div>
-        {/* <Header /> */}
+      <div className="bg-white">
+        <Header />
         <MainWrapperCustom>
           <main>
             <Routes>
-              <Route path="/" element={<Navigate to="/under-construction" />} />
+              <Route path="/" element={<Navigate to="/home" />} />
+              <Route path="/home" element={<HomeScreen />} />
               <Route
-                path="/under-construction"
-                element={<UnderConstructionScreen />}
-              />
-              {/* <Route
                 path="/agenda-activities"
                 element={<AgendaOfActivitiesScreen />}
               />
@@ -52,12 +48,12 @@ const AppRouter: React.FC = () => {
                 element={<CommercialProposalScreen />}
               />
               <Route path="/packages" element={<PackagesScreen />} />
-              <Route path="/contact" element={<ContactScreen />} /> */}
+              <Route path="/contact" element={<ContactScreen />} />
               <Route path="*" element={<NotFoundScreen />} />
             </Routes>
           </main>
         </MainWrapperCustom>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
   );

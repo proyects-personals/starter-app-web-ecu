@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logoEcuFest from '../../../../assets/logos/Logo-Ecuador-Fest1.png';
+import logoCCM from '../../../../assets/logos/LogoCCM.png';
+import logoEcuFestb from '../../../../assets/logos/Logo-Ecuador-Festb1.png';
 import {
   Home as HomeIcon,
   Event as EventIcon,
@@ -17,11 +18,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > SCROLL_THRESHOLD) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > SCROLL_THRESHOLD);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -31,97 +28,68 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all ease-in-out ${
-        scrolled ? 'bg-gray-800 text-white' : 'bg-transparent text-black'
+        scrolled ? 'bg-dark text-white' : 'bg-transparent text-black'
       }`}
     >
-      <div className="flex justify-between items-center py-1 px-18 mx-2 sm:mx-28">
-        <div className="flex items-center space-x-6 gap-12">
-          {/* Enlace al Home */}
+      {/* Logos */}
+      <div className="grid grid-cols-2 py-1 px-4 sm:px-16">
+        <div className="flex items-center">
           <Link to="/">
             <img
-              src={logoEcuFest}
+              src={logoCCM}
               alt="Logo"
-              className="h-20 w-20 cursor-pointer"
+              className="h-20 sm:h-28 w-auto cursor-pointer"
             />
           </Link>
         </div>
-        <div className="flex space-x-4">
-          <p className="text-white">ECUADOR TRAVEL</p>
+        <div className="flex justify-start">
+          <Link to="/">
+            <img
+              src={logoEcuFestb}
+              alt="Logo"
+              className="h-20 sm:h-28 w-auto cursor-pointer"
+            />
+          </Link>
         </div>
       </div>
-      <div className="w-full bg-gray-800 p-4 text-white flex justify-center">
-        <nav className="flex space-x-6 mx-2">
-          {/* Enlace 1: Home */}
-          <Link
-            to="/"
-            className="hover:text-gray-400 flex items-center"
-            title="Home"
-          >
-            <HomeIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Home</span>
-          </Link>
 
-          {/* Enlace 2: Agenda de actividades */}
-          <Link
-            to="/agenda-activities"
-            className="hover:text-gray-400 flex items-center"
-            title="Agenda de actividades"
-          >
-            <EventIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Agenda de actividades</span>
-          </Link>
-
-          {/* Enlace 3: Conoce Ecuador Travel */}
-          <Link
-            to="/discover-Ecuador-travel"
-            className="hover:text-gray-400 flex items-center"
-            title="Conoce Ecuador Travel"
-          >
-            <InfoIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Conoce Ecuador Travel</span>
-          </Link>
-
-          {/* Enlace 4: Catálogo */}
-          <Link
-            to="/catalog"
-            className="hover:text-gray-400 flex items-center"
-            title="Catálogo"
-          >
-            <BookIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Catálogo</span>
-          </Link>
-
-          {/* Enlace 5: Propuesta Comercial */}
-          <Link
-            to="/commercial-proposal"
-            className="hover:text-gray-400 flex items-center"
-            title="Propuesta Comercial"
-          >
-            <HandshakeIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Propuesta Comercial</span>
-          </Link>
-
-          {/* Enlace 6: Paquetes */}
-          <Link
-            to="/packages"
-            className="hover:text-gray-400 flex items-center"
-            title="Paquetes"
-          >
-            <LocalOfferIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Paquetes</span>
-          </Link>
-
-          {/* Enlace 7: Contáctanos */}
-          <Link
-            to="/contact"
-            className="hover:text-gray-400 flex items-center"
-            title="Contáctanos"
-          >
-            <MailIcon className="sm:hidden mr-2" />
-            <span className="hidden sm:inline">Contáctanos</span>
-          </Link>
-        </nav>
-      </div>
+      {/* Barra de Navegación */}
+      <nav className="w-full bg-dark p-3 text-white flex justify-center">
+        <div className="flex space-x-6 sm:space-x-10 lg:space-x-16">
+          {[
+            { to: '/', icon: <HomeIcon />, text: 'Home' },
+            {
+              to: '/agenda-activities',
+              icon: <EventIcon />,
+              text: 'Agenda de actividades',
+            },
+            {
+              to: '/discover-Ecuador-travel',
+              icon: <InfoIcon />,
+              text: 'Conoce Ecuador Travel',
+            },
+            { to: '/catalog', icon: <BookIcon />, text: 'Catálogo' },
+            {
+              to: '/commercial-proposal',
+              icon: <HandshakeIcon />,
+              text: 'Propuesta Comercial',
+            },
+            { to: '/packages', icon: <LocalOfferIcon />, text: 'Paquetes' },
+            { to: '/contact', icon: <MailIcon />, text: 'Contáctanos' },
+          ].map(({ to, icon, text }) => (
+            <Link
+              key={to}
+              to={to}
+              className="hover:text-gray-400 flex items-center"
+            >
+              <span className="block text-lg md:text-xl">{icon}</span>
+              <span className="hidden md:inline ml-2 text-base lg:text-lg font-semibold">
+                {text}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </nav>
     </header>
   );
 };

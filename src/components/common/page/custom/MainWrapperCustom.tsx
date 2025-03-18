@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTheme } from '../../../../hook/theme';
 
 type MainWrapperProps = {
   children: React.ReactNode;
@@ -10,12 +9,8 @@ const MainWrapperCustom: React.FC<MainWrapperProps> = ({
   children,
   className,
 }) => {
-  const { isDarkTheme } = useTheme();
-
   return (
-    <div
-      className={`${isDarkTheme ? 'bg-dark-primary' : 'bg-light-primary'} ${className ?? ''} min-h-screen`}
-    >
+    <div className={`bg-white ${className ?? ''} min-h-screen`}>
       <main>{children}</main>
     </div>
   );

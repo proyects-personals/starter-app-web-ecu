@@ -1,6 +1,6 @@
 import React from 'react';
-import PageWrapperCustom from '../../../components/common/page/custom/PageWrapperCustom';
 import ImageWithText from '../../../components/common/images/ImageWithText';
+import UnderConstructionScreen from '../construction/UnderConstructionScreen';
 
 const AgendaOfActivitiesScreen: React.FC = () => {
   return (
@@ -10,9 +10,7 @@ const AgendaOfActivitiesScreen: React.FC = () => {
         altText="Imagen de fondo"
         text="Agenda de Actividades"
       />
-      <PageWrapperCustom className="relative">
-        <div className="relative z-10 p-4">trabajando......</div>
-      </PageWrapperCustom>
+      <UnderConstructionScreen />
     </div>
   );
 };
