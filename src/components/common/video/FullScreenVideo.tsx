@@ -24,6 +24,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
 
   return (
     <div className="relative inset-0 w-full h-full overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full bg-light-red opacity-90 z-10"></div>
       <ReactPlayer
         url={url}
         playing
@@ -32,7 +33,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
         width="100vw"
         height="100vh"
         className="absolute top-0 left-0"
-        style={{ transform: `scale(${scale})` }}
+        style={{ transform: `scale(${scale})`, zIndex: 0 }}
       />
     </div>
   );

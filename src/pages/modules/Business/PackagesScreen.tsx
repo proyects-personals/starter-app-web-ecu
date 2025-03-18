@@ -1,6 +1,7 @@
 import React from 'react';
 import PageWrapperCustom from '../../../components/common/page/custom/PageWrapperCustom';
 import ImageWithText from '../../../components/common/images/ImageWithText';
+import UnderConstructionScreen from '../construction/UnderConstructionScreen';
 
 const PackagesScreen: React.FC = () => {
   return (
@@ -10,9 +11,7 @@ const PackagesScreen: React.FC = () => {
         altText="Imagen de fondo"
         text="Paquetes"
       />
-      <PageWrapperCustom className="relative">
-        <div className="relative z-10 p-4">trabajando......</div>
-      </PageWrapperCustom>
+      <UnderConstructionScreen />
     </div>
   );
 };
