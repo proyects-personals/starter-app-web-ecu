@@ -7,7 +7,7 @@ import imagePiquero from '../.././../assets/animals/PiqueroWEB.jpg';
 import imageTortuga from '../.././../assets/animals/TortugaWEB.jpg';
 import LocationInfo from '../../../components/home/LocationInfo';
 import Carousel from '../../../components/common/carrusels/Carousel';
-import videoHome from '../../../assets/videos/bgVideo.mp4';
+import videoHome from '../../../assets/animations/bgVideo.mp4';
 import halfOfTheWorld from '../../../assets/places/MitadMundoWEB.jpg';
 import Partners1Image from '../../../assets/logos/Partners1.png';
 
