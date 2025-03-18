@@ -42,7 +42,7 @@ const Header = () => {
             />
           </Link>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-start">
           <Link to="/">
             <img
               src={logoEcuFestb}
