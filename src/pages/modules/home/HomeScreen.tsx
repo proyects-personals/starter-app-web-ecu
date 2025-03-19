@@ -7,7 +7,6 @@ import imagePiquero from '../.././../assets/animals/PiqueroWEB.jpg';
 import imageTortuga from '../.././../assets/animals/TortugaWEB.jpg';
 import LocationInfo from '../../../components/home/LocationInfo';
 import Carousel from '../../../components/common/carrusels/Carousel';
-import videoHome from '../../../assets/videos/bgVideo.mp4';
 import halfOfTheWorld from '../../../assets/places/MitadMundoWEB.jpg';
 import Partners1Image from '../../../assets/logos/Partners1.png';
 
@@ -16,7 +15,11 @@ const HomeScreen: React.FC = () => {
   return (
     <div className="grid grid-cols-1 space-y-8 mb-8">
       <section>
-        <HeroSection videoUrl={videoHome} />
+        <HeroSection
+          videoUrl={
+            'https://travel-ecudor.s3.us-east-2.amazonaws.com/bgVideo.mp4'
+          }
+        />
       </section>
       <section>
         <IconNumber />
