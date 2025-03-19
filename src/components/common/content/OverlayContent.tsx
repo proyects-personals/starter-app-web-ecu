@@ -4,7 +4,7 @@ const MILLISECONDS_IN_A_SECOND = 1000;
 const SECONDS_IN_A_MINUTE = 60;
 const MINUTES_IN_AN_HOUR = 60;
 const HOURS_IN_A_DAY = 24;
-const COUNTDOWN_TARGET = new Date('april 15, 2025 00:00:00').getTime();
+const COUNTDOWN_TARGET = new Date('May 15, 2025 00:00:00').getTime();
 
 const calculateTimeLeft = () => {
   const now = new Date().getTime();
@@ -58,7 +58,7 @@ const OverlayContent: React.FC = () => {
       MILLISECONDS_IN_A_SECOND
     );
     return () => clearInterval(interval);
-  }, []);
+  }, [date]);
 
   return (
     <div className="grid grid-rows-4 gap-4 text-center text-white w-full h-full overflow-hidden">
@@ -70,17 +70,9 @@ const OverlayContent: React.FC = () => {
         </h2>
       </div>
       <div className="grid grid-cols-1 items-center w-full p-2">
-        {/* <div className="flex flex-wrap justify-center gap-4">
-          <button className="text-xs sm:text-base font-semibold px-6 py-2 bg-light-yellow rounded-lg hover:bg-amber-300 transition-colors border">
-            Botón Call to Action
-          </button>
-          <button className="text-xs sm:text-base font-semibold px-6 py-2 bg-light-yellow rounded-lg hover:bg-amber-300 transition-colors border">
-            Registro de vendedor
-          </button>
-        </div> */}
         <div className="flex justify-center mt-4">
           <button className="text-sm sm:text-base px-6 py-2 bg-dark rounded-lg hover:bg-gray-800 transition-colors">
-            Ecuador, {date}
+            Ecuador, del 15 al 18 de Mayo del 2025
           </button>
         </div>
       </div>

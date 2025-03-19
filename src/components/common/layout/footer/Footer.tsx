@@ -93,7 +93,7 @@ const Footer = () => {
 
       <div className="mt-8 border-t-2 border-gray-700 pt-4 flex flex-col md:flex-row justify-between">
         <div className="container mx-auto text-center md:text-left">
-          <p>© 2025 Ecuador Travel Mart, Todos los derechos reservados</p>
+          <p>© 2025 Feria Ecuador Travel, Todos los derechos reservados</p>
         </div>
       </div>
     </footer>
