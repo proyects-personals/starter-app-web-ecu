@@ -14,7 +14,7 @@ const LocationInfo: React.FC = () => {
           <div className="border-t-2 border-light-red w-full mt-4 mb-4"></div>
           <button
             onClick={() => window.open(googleMapsLink, '_blank')}
-            className="bg-light-red text-white py-2 px-6 rounded-md shadow-md mb-4 hover:bg-teal-500 transition duration-300 flex items-center space-x-2 justify-center"
+            className="bg-light-red text-white py-2 px-6 rounded-md shadow-md mb-4 hover:bg-red-800 transition duration-300 flex items-center space-x-2 justify-center"
           >
             <i className="fa-solid fa-magnifying-glass text-xl"></i>
             <span>Ver en Google Maps</span>
