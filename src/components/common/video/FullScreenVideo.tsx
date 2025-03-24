@@ -10,11 +10,11 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
 
   useEffect(() => {
     const updateScale = () => {
-      if (window.innerWidth < MOBILE_BREAKPOINT) {
-        setScale(DEFAULT_SCALE_SMALL_SCREEN);
-      } else {
-        setScale(DEFAULT_SCALE_LARGE_SCREEN);
-      }
+      setScale(
+        window.innerWidth < MOBILE_BREAKPOINT
+          ? DEFAULT_SCALE_SMALL_SCREEN
+          : DEFAULT_SCALE_LARGE_SCREEN
+      );
     };
 
     updateScale();
@@ -30,6 +30,10 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
         playing
         loop
         muted
+        playsinline
+        controls={false}
+        pip={false}
+        onStart={() => console.log('Video started')}
         width="100vw"
         height="100vh"
         className="absolute top-0 left-0"
