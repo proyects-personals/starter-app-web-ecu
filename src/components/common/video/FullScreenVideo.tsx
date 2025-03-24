@@ -7,7 +7,7 @@ const MOBILE_BREAKPOINT = 768;
 
 const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
   const [scale, setScale] = useState(DEFAULT_SCALE_LARGE_SCREEN);
-  const playerRef = useRef<typeof ReactPlayer | null>(null); // Usamos typeof ReactPlayer
+  const playerRef = useRef<typeof ReactPlayer | null>(null);
 
   useEffect(() => {
     const updateScale = () => {
@@ -28,26 +28,25 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
       if (playerRef.current) {
         const video = playerRef.current.getInternalPlayer() as HTMLVideoElement;
         if (video && video.paused) {
-          video.muted = true; // Asegura que siga silenciado
-          video.play().catch(() => {
-            console.warn(
-              'Autoplay bloqueado en Safari, esperando interacción del usuario.'
-            );
+          video.muted = true;
+          video.play().catch((error) => {
+            console.warn('Autoplay bloqueado:', error);
           });
         }
       }
     };
 
-    // Intenta reproducirlo al montar
     enableAutoplay();
+    const handleUserInteraction = () => {
+      enableAutoplay();
+    };
 
-    // Asegura la reproducción automática en el primer intento
-    document.addEventListener('click', enableAutoplay);
-    document.addEventListener('touchstart', enableAutoplay);
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('touchstart', handleUserInteraction);
 
     return () => {
-      document.removeEventListener('click', enableAutoplay);
-      document.removeEventListener('touchstart', enableAutoplay);
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touchstart', handleUserInteraction);
     };
   }, []);
 
@@ -59,7 +58,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
         url={url}
         playing
         loop
-        muted={true} // 🔇 Video siempre silenciado
+        muted={true}
         playsinline
         controls={false}
         pip={false}
@@ -71,9 +70,9 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
           if (playerRef.current) {
             const video =
               playerRef.current.getInternalPlayer() as HTMLVideoElement;
-            video.muted = true; // 🔇 Asegura que esté silenciado
-            video?.play().catch(() => {
-              console.warn('Autoplay bloqueado en Safari');
+            video.muted = true;
+            video?.play().catch((error) => {
+              console.warn('Autoplay bloqueado en Safari:', error);
             });
           }
         }}
