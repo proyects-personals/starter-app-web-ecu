@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoCCM from '../../../../assets/logos/LogoCCM.png';
 import logoEcuFestb from '../../../../assets/logos/Logo-Ecuador-Festb1.png';
 import {
@@ -15,6 +15,7 @@ import {
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const SCROLL_THRESHOLD = 50;
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,7 +81,9 @@ const Header = () => {
             <Link
               key={to}
               to={to}
-              className="hover:text-gray-400 flex items-center"
+              className={`flex items-center hover:text-gray-400 transition-all ${
+                location.pathname === to ? 'text-yellow-400 font-bold' : ''
+              }`}
             >
               <span className="block text-lg md:text-xl">{icon}</span>
               <span className="hidden md:inline ml-2 text-base lg:text-lg font-semibold">

@@ -25,13 +25,14 @@ const activities = [
 ];
 
 const AgendaOfActivitiesScreen: React.FC = () => {
+  const subtitle = 'Día 1 - Día 4';
   return (
     <body className="grid grid-cols-1 space-y-8 mb-8">
       <ImageWithText
         imageUrl={crabImage}
         altText="Imagen de fondo"
         text="Agenda de Actividades"
-        subtitle="adadad"
+        subtitle={subtitle}
       />
       <section className="grid grid-cols-1 p-10 sm:p-20">
         <ActivitySection activities={activities} />

@@ -52,7 +52,7 @@ const Footer = () => {
                 to="/commercial-proposal"
                 className="text-white hover:underline"
               >
-                Propuesta comercial
+                Propuesta Comercial
               </Link>
             </li>
             <li>

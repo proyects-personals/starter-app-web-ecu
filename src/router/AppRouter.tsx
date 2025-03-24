@@ -12,11 +12,11 @@ import AgendaOfActivitiesScreen from '../pages/modules/Business/AgendaOfActiviti
 import MainWrapperCustom from '../components/common/page/custom/MainWrapperCustom';
 import DiscoverEcuadorTravelScreen from '../pages/modules/Business/DiscoverEcuadorTravelScreen';
 import CatalogScreen from '../pages/modules/Business/CatalogScreen';
-import CommercialProposalScreen from '../pages/modules/Business/CommercialProposalScreen';
 import PackagesScreen from '../pages/modules/Business/PackagesScreen';
 import ContactScreen from '../pages/modules/Business/ContactScreen';
 import ScrollToTop from '../components/common/page/scroll/ScrollToTop';
 import NotFoundScreen from '../pages/errors/404/NotFoundScreen';
+import CommercialProposalScreen from '../pages/modules/Business/CommercialProposalScreen';
 
 const AppRouter: React.FC = () => {
   return (
