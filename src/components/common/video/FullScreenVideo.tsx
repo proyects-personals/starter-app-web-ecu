@@ -2,15 +2,32 @@ import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
 import { useLocation } from 'react-router-dom';
 
+declare global {
+  interface Window {
+    MSStream?: unknown;
+  }
+}
+
 const DEFAULT_SCALE_LARGE_SCREEN = 2.2;
 const DEFAULT_SCALE_SMALL_SCREEN = 4.4;
 const MOBILE_BREAKPOINT = 768;
-const FIVE_HUNDRED = 10;
 
-const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
+const isIOS = () => {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+};
+
+const FullScreenVideo: React.FC<{ url: string; fallbackImage: string }> = ({
+  url,
+  fallbackImage,
+}) => {
   const [scale, setScale] = useState(DEFAULT_SCALE_LARGE_SCREEN);
+  const [isIOSDevice, setIsIOSDevice] = useState(false);
   const playerRef = useRef<typeof ReactPlayer | null>(null);
   const location = useLocation();
+
+  useEffect(() => {
+    setIsIOSDevice(isIOS());
+  }, []);
 
   useEffect(() => {
     const updateScale = () => {
@@ -27,29 +44,37 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
   }, []);
 
   useEffect(() => {
-    const enableAutoplay = () => {
-      if (playerRef.current) {
-        const video = playerRef.current.getInternalPlayer() as HTMLVideoElement;
-        if (video && video.paused) {
-          video.muted = true;
-          video.play().catch((error) => {
-            console.warn('Autoplay bloqueado:', error);
-          });
+    if (!isIOSDevice && location.pathname === '/home') {
+      const enableAutoplay = () => {
+        if (playerRef.current) {
+          const video =
+            playerRef.current.getInternalPlayer() as HTMLVideoElement;
+          if (video && video.paused) {
+            video.muted = true;
+            video.play().catch((error) => {
+              console.warn('Autoplay bloqueado:', error);
+            });
+          }
         }
-      }
-    };
+      };
 
-    if (location.pathname === '/home') {
       enableAutoplay();
     }
-    const simulateUserInteraction = () => {
-      document.dispatchEvent(new Event('click'));
-    };
+  }, [location.pathname, isIOSDevice]);
 
-    const timeout = setTimeout(simulateUserInteraction, FIVE_HUNDRED);
-
-    return () => clearTimeout(timeout);
-  }, [location.pathname]);
+  if (isIOSDevice) {
+    return (
+      <div className="relative inset-0 w-full h-full overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-light-red opacity-60 z-10"></div>
+        <img
+          src={fallbackImage}
+          alt="Fallback Image"
+          className="absolute top-0 left-0 w-full h-full object-cover"
+          style={{ transform: `scale(${scale})`, zIndex: 0 }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="relative inset-0 w-full h-full overflow-hidden">
