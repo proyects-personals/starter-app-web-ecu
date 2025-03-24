@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 const DEFAULT_SCALE_LARGE_SCREEN = 2.2;
 const DEFAULT_SCALE_SMALL_SCREEN = 4.4;
 const MOBILE_BREAKPOINT = 768;
+const FIVE_HUNDRED = 10;
 
 const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
   const [scale, setScale] = useState(DEFAULT_SCALE_LARGE_SCREEN);
@@ -45,7 +46,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
       document.dispatchEvent(new Event('click'));
     };
 
-    const timeout = setTimeout(simulateUserInteraction, 500);
+    const timeout = setTimeout(simulateUserInteraction, FIVE_HUNDRED);
 
     return () => clearTimeout(timeout);
   }, [location.pathname]);
