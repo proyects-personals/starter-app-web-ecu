@@ -33,7 +33,6 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
         playsinline
         controls={false}
         pip={false}
-        onStart={() => console.log('Video started')}
         width="100vw"
         height="100vh"
         className="absolute top-0 left-0"
