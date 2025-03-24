@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactPlayer from 'react-player';
+import { useLocation } from 'react-router-dom';
 
 const DEFAULT_SCALE_LARGE_SCREEN = 2.2;
 const DEFAULT_SCALE_SMALL_SCREEN = 4.4;
@@ -8,6 +9,7 @@ const MOBILE_BREAKPOINT = 768;
 const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
   const [scale, setScale] = useState(DEFAULT_SCALE_LARGE_SCREEN);
   const playerRef = useRef<typeof ReactPlayer | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const updateScale = () => {
@@ -36,19 +38,17 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
       }
     };
 
-    enableAutoplay();
-    const handleUserInteraction = () => {
+    if (location.pathname === '/home') {
       enableAutoplay();
+    }
+    const simulateUserInteraction = () => {
+      document.dispatchEvent(new Event('click'));
     };
 
-    document.addEventListener('click', handleUserInteraction);
-    document.addEventListener('touchstart', handleUserInteraction);
+    const timeout = setTimeout(simulateUserInteraction, 500);
 
-    return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-    };
-  }, []);
+    return () => clearTimeout(timeout);
+  }, [location.pathname]);
 
   return (
     <div className="relative inset-0 w-full h-full overflow-hidden">
@@ -72,7 +72,7 @@ const FullScreenVideo: React.FC<{ url: string }> = ({ url }) => {
               playerRef.current.getInternalPlayer() as HTMLVideoElement;
             video.muted = true;
             video?.play().catch((error) => {
-              console.warn('Autoplay bloqueado en Safari:', error);
+              console.warn('Autoplay bloqueado en iOS:', error);
             });
           }
         }}
