@@ -65,7 +65,7 @@ const OverlayContent: React.FC = () => {
       <div></div>
       <div className="text-center space-y-2 p-8 w-full">
         <h1 className="text-2xl sm:text-6xl font-bold">
-          Bienvenido a Ecuadoooorrrr
+          Bienvenido a Ecuador
         </h1>
         <h2 className="text-xl sm:text-5xl font-semibold">
           1 Destino, 4 Aventuras
