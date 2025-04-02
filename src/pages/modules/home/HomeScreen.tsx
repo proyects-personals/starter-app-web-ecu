@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from '../../../components/home/HeroSection';
-import IconNumber from '../../../components/home/IconNumber';
+//import IconNumber from '../../../components/home/IconNumber';
 import monkeyImage from '../../../assets/animals/Mono.jpg';
 import imageOso from '../.././../assets/animals/OsoWEB.jpg';
 import imagePiquero from '../.././../assets/animals/PiqueroWEB.jpg';
@@ -21,9 +21,7 @@ const HomeScreen: React.FC = () => {
           }
         />
       </section>
-      <section>
-        <IconNumber />
-      </section>
+
       <section
         className="grid grid-cols-1 sm:grid-cols-2  bg-cover bg-center relative"
         style={{ backgroundImage: `url(${halfOfTheWorld})` }}
@@ -31,7 +29,7 @@ const HomeScreen: React.FC = () => {
         <div className="absolute inset-0 bg-light-yellow50 opacity-60"></div>{' '}
         {/* Capa de opacidad */}
         <div className="p-10 sm:p-20 text-white relative z-10">
-          <h1 className="text-4xl">Ecuador Travel</h1>
+          <h1 className="text-7xl">Ecuador Travel Test</h1>
           <div className="border-t-2 border-white w-60 mt-4"></div>
           <p className="pt-4 text-md">
             Es una plataforma turistica innovadora que conecta la oferta
