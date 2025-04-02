@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../../../components/home/HeroSection'; 
+import HeroSection from '../../../components/home/HeroSection';
 import IconNumber from '../../../components/home/IconNumber';
 import monkeyImage from '../../../assets/animals/Mono.jpg';
 import imageOso from '../.././../assets/animals/OsoWEB.jpg';
