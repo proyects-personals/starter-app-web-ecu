@@ -1,6 +1,5 @@
 import React from 'react';
 import HeroSection from '../../../components/home/HeroSection';
-import IconNumber from '../../../components/home/IconNumber';
 import monkeyImage from '../../../assets/animals/Mono.jpg';
 import imageOso from '../.././../assets/animals/OsoWEB.jpg';
 import imagePiquero from '../.././../assets/animals/PiqueroWEB.jpg';
@@ -9,9 +8,15 @@ import LocationInfo from '../../../components/home/LocationInfo';
 import Carousel from '../../../components/common/carrusels/Carousel';
 import halfOfTheWorld from '../../../assets/places/MitadMundoWEB.jpg';
 import Partners1Image from '../../../assets/logos/Partners1.png';
+import PartnersSlider from '../../../components/home/PartnersSlider';
 
 const HomeScreen: React.FC = () => {
-  const images = [monkeyImage, imageOso, imagePiquero, imageTortuga];
+  const images: string[] = [monkeyImage, imageOso, imagePiquero, imageTortuga];
+  const partnerImages: string[] = [
+    Partners1Image,
+    Partners1Image,
+    Partners1Image,
+  ];
   return (
     <div className="grid grid-cols-1 space-y-8 mb-8">
       <section>
@@ -20,9 +25,6 @@ const HomeScreen: React.FC = () => {
             'https://travel-ecudor.s3.us-east-2.amazonaws.com/bgVideo.mp4'
           }
         />
-      </section>
-      <section>
-        <IconNumber />
       </section>
       <section
         className="grid grid-cols-1 sm:grid-cols-2  bg-cover bg-center relative"
@@ -46,18 +48,7 @@ const HomeScreen: React.FC = () => {
           <Carousel images={images} />
         </div>
       </section>
-
-      <section className="grid grid-cols-1">
-        <div className="flex flex-col justify-center items-center mb-8">
-          <h1 className="text-4xl text-dark">Partners</h1>
-          <div className="border-t-2 border-light-red w-44 mt-4"></div>
-        </div>
-        <div className="grid grid-cols-1 gap-2">
-          <div className="flex justify-center items-center">
-            <img src={Partners1Image} alt="Logo" className="w-52 h-auto" />
-          </div>
-        </div>
-      </section>
+      <PartnersSlider images={partnerImages} />
       <section className="grid grid-cols-1">
         <div className="flex flex-col justify-center items-center bg-light-base50 h-40">
           <div className="flex items-center">

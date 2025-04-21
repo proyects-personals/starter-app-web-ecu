@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logoCCM from '../../../../assets/logos/LogoCCM.png';
-import logoEcuFestb from '../../../../assets/logos/Logo-Ecuador-Festb1.png';
+import logoEcuFestb from '../../../../assets/logos/Logo-Ecuador-Fest1.png';
 import {
   Home as HomeIcon,
   Event as EventIcon,
@@ -28,8 +28,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all ease-in-out ${
-        scrolled ? 'bg-dark text-white' : 'bg-transparent text-black'
+      className={`absolute top-0 left-0 w-full z-50 transition-all ease-in-out ${
+        scrolled ? 'bg-transparent text-dark' : 'bg-transparent text-black'
       }`}
     >
       {/* Logos */}
@@ -37,28 +37,18 @@ const Header = () => {
         <div className="flex items-center">
           <Link to="/">
             <img
-              src={logoCCM}
-              alt="Logo"
-              className="h-20 sm:h-28 w-auto cursor-pointer"
-            />
-          </Link>
-        </div>
-        <div className="flex justify-start">
-          <Link to="/">
-            <img
               src={logoEcuFestb}
               alt="Logo"
-              className="h-20 sm:h-28 w-auto cursor-pointer"
+              className="h-20 sm:h-40 w-auto cursor-pointer"
             />
           </Link>
         </div>
       </div>
 
-      {/* Barra de Navegación */}
       <nav className="w-full bg-dark p-3 text-white flex justify-center">
         <div className="flex space-x-6 sm:space-x-10 lg:space-x-16">
           {[
-            { to: '/', icon: <HomeIcon />, text: 'Home' },
+            { to: '/home', icon: <HomeIcon /> },
             {
               to: '/agenda-activities',
               icon: <EventIcon />,

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AnimatedText from '../text/AnimatedText';
 
 const MILLISECONDS_IN_A_SECOND = 1000;
 const SECONDS_IN_A_MINUTE = 60;
@@ -64,9 +65,11 @@ const OverlayContent: React.FC = () => {
     <div className="grid grid-rows-4 gap-4 text-center text-white w-full h-full overflow-hidden">
       <div></div>
       <div className="text-center space-y-2 p-8 w-full">
-        <h1 className="text-2xl sm:text-6xl font-bold">Bienvenido a Ecuador</h1>
-        <h2 className="text-xl sm:text-5xl font-semibold">
-          1 Destino, 4 Aventuras
+        <h1 className="text-2xl sm:text-9xl font-bold">
+          <AnimatedText text="Bienvenido a Ecuador" animation="word-by-word" />
+        </h1>
+        <h2 className="text-xl sm:text-7xl font-semibold">
+          <AnimatedText text="1 Destino, 4 Aventuras" />
         </h2>
       </div>
       <div className="grid grid-cols-1 items-center w-full p-2">
